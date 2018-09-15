@@ -1,3 +1,5 @@
+package SimpleSorts;
+
 public class InsertionSort {
     /**
      * Point of this class is to implement the insertion sort algorithm

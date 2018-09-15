@@ -1,4 +1,6 @@
-package SimpleSorts;
+package Sorting.SimpleSorts;
+
+import Sorting.CommonSortingMethods;
 
 public class InsertionSort {
     /**
@@ -17,7 +19,7 @@ public class InsertionSort {
             if(sortingArray[index] > sortingArray[index + 1]){
 
                 //Swaps Index and index +1 numbers since we found out of place number
-                swapValues(index, index + 1, sortingArray);
+                CommonSortingMethods.swapValues(index, index + 1, sortingArray);
 
                 //If statement decides if the swapped number needs to be inserted further left in the array
                 if(index != 0 && sortingArray[index-1] > sortingArray[index]) {
@@ -26,7 +28,7 @@ public class InsertionSort {
 
                     //While loop moves tempIndex left until number is inserted in the proper place in the array
                     while (tempIndex != 0 && sortingArray[tempIndex - 1] > sortingArray[tempIndex] ) {
-                        swapValues(tempIndex - 1, tempIndex, sortingArray);
+                        CommonSortingMethods.swapValues(tempIndex - 1, tempIndex, sortingArray);
                         tempIndex--;
                     }
                 }
@@ -36,17 +38,5 @@ public class InsertionSort {
         }
         //return the sorted array
         return sortingArray;
-    }
-
-    private static int[] swapValues(int indexLeft, int indexRight, int[] array){
-
-        //keeping left index array value
-        int leftValue = array[indexLeft];
-        //assigning array at left index to the value in right index
-        array[indexLeft] = array[indexRight];
-        //assigning array at right index to the value we stored in leftValue
-        array[indexRight] = leftValue;
-        //return the array
-        return array;
     }
 }
